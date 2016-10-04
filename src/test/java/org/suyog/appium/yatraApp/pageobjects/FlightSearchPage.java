@@ -1,7 +1,6 @@
 package org.suyog.appium.yatraApp.pageobjects;
 
 import org.suyog.appium.helper.AbstractPage;
-
 import io.appium.java_client.android.AndroidDriver;
 
 public class FlightSearchPage extends AbstractPage {
