@@ -1,6 +1,5 @@
 package org.suyog.appium.yatraApp.pageobjects;
 
-import org.openqa.selenium.By;
 import org.suyog.appium.helper.AbstractPage;
 
 import io.appium.java_client.android.AndroidDriver;

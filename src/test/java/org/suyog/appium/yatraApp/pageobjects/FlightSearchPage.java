@@ -1,6 +1,5 @@
 package org.suyog.appium.yatraApp.pageobjects;
 
-import org.openqa.selenium.By;
 import org.suyog.appium.helper.AbstractPage;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -13,23 +12,23 @@ public class FlightSearchPage extends AbstractPage {
   }
   
   public FlightSearchPage selectOriginCity() throws Exception {
-    driver.findElement(By.id("com.yatra.base:id/org_citycode_textview")).click();
-    driver.findElement(By.id("com.yatra.base:id/edit_location_search_in_actionbar")).click();
-    driver.findElement(By.id("com.yatra.base:id/edit_location_search_in_actionbar")).sendKeys("BLR");
-    driver.findElement(By.xpath("//android.widget.LinearLayout[@index=0]/android.widget.TextView[@index=0]")).click();
+    driver.findElement(getElement("srcCityLabel")).click();
+    driver.findElement(getElement("citySearchBar")).click();
+    driver.findElement(getElement("citySearchBar")).sendKeys("BLR");
+    driver.findElement(getElement("citySearchTopResult")).click();
     return new FlightSearchPage(driver);
   }
   
   public FlightSearchPage selectDestinationCity() throws Exception {
-    driver.findElement(By.id("com.yatra.base:id/dest_citycode_textview")).click();  
-    driver.findElement(By.id("com.yatra.base:id/edit_location_search_in_actionbar")).click();
-    driver.findElement(By.id("com.yatra.base:id/edit_location_search_in_actionbar")).sendKeys("PNQ");
-    driver.findElement(By.xpath("//android.widget.LinearLayout[@index=0]/android.widget.TextView[@index=0]")).click();
+    driver.findElement(getElement("destCityLabel")).click();  
+    driver.findElement(getElement("citySearchBar")).click();
+    driver.findElement(getElement("citySearchBar")).sendKeys("PNQ");
+    driver.findElement(getElement("citySearchTopResult")).click();
     return new FlightSearchPage(driver);
   }
   
   public FlightSearchResultsPage navigateToSearchResultsPage() throws Exception {
-    driver.findElement(By.id("com.yatra.base:id/search_button")).click();
+    driver.findElement(getElement("searchFlightButton")).click();
     Thread.sleep(30000);
     return new FlightSearchResultsPage(driver);  
   }
