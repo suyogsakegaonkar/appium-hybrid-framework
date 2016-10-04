@@ -1,6 +1,5 @@
 package org.suyog.appium.yatraApp.pageobjects;
 
-import org.openqa.selenium.By;
 import org.suyog.appium.helper.AbstractPage;
 import org.testng.Assert;
 
@@ -14,8 +13,8 @@ public class FlightSearchResultsPage extends AbstractPage {
   }
   
   public FlightSearchResultsPage verifyFromToCityOnHeader() throws Exception {
-    Assert.assertEquals(driver.findElement(By.id("com.yatra.base:id/origin_header_textview")).getText(),"Bangalore");
-    Assert.assertEquals(driver.findElement(By.id("com.yatra.base:id/dest_header_textview")).getText(),"Pune");
+    Assert.assertEquals(driver.findElement(getElement("srcCityHeader")).getText(),"Bangalore");
+    Assert.assertEquals(driver.findElement(getElement("destCityHeader")).getText(),"Pune");
     return new FlightSearchResultsPage(driver);
   }
 
